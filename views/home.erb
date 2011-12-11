@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Gymfo</title>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Javascripts -->
+    <script type="text/javascript" src="js/d3.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <!-- Le styles -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+      /* Override some defaults */
+      html, body {
+        background-color: #10314D;
+        color: #F0F2F0;
+      }
+      body {
+        padding-top: 10px;
+      }
+      .page-header > h1 {
+        color: #F0F2F0;
+      }
+      .container > footer p {
+        text-align: center; /* center align it with the container */
+        color: #F0F2F0;
+      }
+      .container {
+        width: 820px; /* downsize our container to make the content feel a bit tighter and more cohesive. NOTE: this removes two full columns from the grid, meaning you only go to 14 columns and not 16. */
+      }
+
+      /* The white background content wrapper */
+      .container > .content {
+        padding: 20px;
+        margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+        -webkit-border-radius: 0 0 6px 6px;
+           -moz-border-radius: 0 0 6px 6px;
+                border-radius: 0 0 6px 6px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+                box-shadow: 0 1px 2px rgba(0,0,0,.15);
+      }
+
+      .show-grid [class*="box"] {
+        background: #262223;
+        text-align: center;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        height: 300px;
+        line-height: 30px;
+      }
+
+      .box > h4 {
+        color: #79DCF2;
+      }
+
+      .datapoint {
+        color: #79DCF2;
+        font-size: 90px;
+        font-weight: bold;
+        line-height: 90px;
+      }
+
+      .chart-container {
+        margin-top: 10px;
+        margin-left: 30px;
+        margin-right: 30px;
+        height: 150px;
+        width: 340px;
+      }
+
+      .chart rect {
+        fill: #79DCF2;
+        stroke: #262223;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>Gymfo <small>How intense is your workout? </small></h1>
+      </div>
+      <div class="row show-grid" style="padding-bottom:20px">
+        <div class="span7 box">
+          <h4>Temperature</h4>
+          <div class="datapoint"><span id="temperature">0</span>&deg F</div>
+          <div id="temp-container" class="chart-container"></div>
+        </div>
+        <div class="span7 box">
+          <h4>Humidity</h4>
+          <div class="datapoint"><span id="humidity">0</span>%</div>
+          <div id="hum-container" class="chart-container"></div>
+        </div>
+      </div> 
+      <div class="row show-grid hide">
+        <div class="span7 box">
+          <h4>Sound</h4>
+          <div class="datapoint"><span id="sound">0</span></div>
+          <div id="sound-container" class="chart-container"></div>
+        </div>
+        <div class="span7 box">
+          <h4>Light</h4>
+          <div class="datapoint"><span id="light">0</span></div>
+          <div id="light-container" class="chart-container"></div>
+        </div>
+      </div> 
+      
+      <footer>
+        <p>a project by frankie cheung, lily szajnberg, nick santaniello, and spike mccue</p>
+      </footer>
+        
+    </div> <!-- /container -->
+
+    <script type="text/javascript" src="js/gymfo.js"></script>
+
+  </body>
+</html>
